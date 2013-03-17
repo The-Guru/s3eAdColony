@@ -15,11 +15,11 @@ This extension has been compiled and tested with the Marmalade SDK 6.2.1
 How to use it
 =============
 
-1. Check extension availability
++ Check extension availability
 
 	bool extensionAvailable = ( s3eAdColonyAvailable() == S3E_TRUE );
 
-2. Register callbacks
++ Register callbacks
 
 	s3eAdColonyRegister( S3E_ADCOLONY_VIRTUAL_CURRENCY_AWARDED_BY_ZONE,
       VirtualCurrencyAwardedByZoneCallback, NULL );
@@ -37,11 +37,11 @@ The callbacks registered must have this signature:
 
   int32 CallbackName( void* systemData, void* userData );
 
-3. Init the extension
++ Init the extension
 
 	s3eAdColonyStart();
 
-4. Play AdColony videos
++ Play AdColony videos
 
 	s3ePlayVideoAdForSlot( 1 );
 	s3ePlayV4VCForSlot( 1, S3E_FALSE, S3E_TRUE );
@@ -52,7 +52,7 @@ will be called and you should pause your game music/fx. After the video has been
 callback registered under S3E_ADCOLONY_TAKEOVER_ENDED_FOR_ZONE will be called and you should
 restore your game music/fx.
 
-5. Unregister callbacks
++ Unregister callbacks
 
 	s3eAdColonyUnRegister( S3E_ADCOLONY_VIRTUAL_CURRENCY_AWARDED_BY_ZONE,
       VirtualCurrencyAwardedByZoneCallback );
