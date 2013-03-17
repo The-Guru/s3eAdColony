@@ -1,0 +1,37 @@
+callbacks
+
+include:
+
+#include <s3eTypes.h>
+
+typedef enum s3eAdColonyCallback
+{
+	S3E_ADCOLONY_VIRTUAL_CURRENCY_AWARDED_BY_ZONE,
+	S3E_ADCOLONY_TAKEOVER_BEGAN_FOR_ZONE,
+	S3E_ADCOLONY_TAKEOVER_ENDED_FOR_ZONE,
+	S3E_ADCOLONY_TAKEOVER_NOT_SERVED_FOR_ZONE,
+
+	S3E_ADCOLONY_CALLBACK_MAX
+
+} s3eAdColonyCallback;
+
+functions:
+
+/**
+ * Must be called before using any other function
+ */
+void s3eAdColonyStart() run_on_os_thread
+
+/**
+ * Playback without in app currency
+ */
+void s3ePlayVideoAdForSlot( int slotNumber ) run_on_os_thread
+void s3ePlayVideoAdForZone( const char* pszZoneID ) run_on_os_thread
+
+/**
+ * Playback with in app currency
+ */
+void s3ePlayV4VCForSlot( int slotNumber, s3eBool PrePopup, s3eBool PostPopup ) run_on_os_thread
+void s3ePlayV4VCForZone( const char* pszZoneID, s3eBool PrePopup, s3eBool PostPopup ) run_on_os_thread
+
+s3eBool s3eVideoAdCurrentlyRunning() S3E_FALSE run_on_os_thread
